@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "CSUF Event Calendar",
+    "description": "Tool to view and/or get updates surrounding CSUF events",
+    "permissions": ["storage"],
+    "version": "0.08",
+    "icons": {
+        "16": "/images/tuffyimage16.png",
+        "48": "/images/tuffyimage48.png",
+        "128": "/images/tuffyimage128.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "/images/tuffyimage16-2.png",
+            "48": "/images/tuffyimage48-2.png",
+            "128": "/images/tuffyimage128-2.png"
+        }
+    },
+        "content_scripts": [{
+            "matches": ["https://brand.fullerton.edu/calendar/*"],
+            "css": ["main.css"]
+        }]
+    }
+    
