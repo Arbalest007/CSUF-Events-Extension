@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Simple calendar</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="cal">
+    <span class="month" id="btnMonth" title="Months">June</span>
+    <span class="button material-icons" id="btnPrev" title="Previous">navigate_before</span>
+    <span class="button material-icons" id="btnCur" title="Today">calendar_today</span>
+    <span class="button material-icons" id="btnNext" title="Next">navigate_next</span>
+    <table id="oneMonth">
+      <tr id="head">
+        <th id="wd_1">Mon</th>
+        <th id="wd_2">Tue</th>
+        <th id="wd_3">Wed</th>
+        <th id="wd_4">Thu</th>
+        <th id="wd_5">Fri</th>
+        <th id="wd_6">Sat</th>
+        <th id="wd_7">Sun</th>
+      </tr>
+      <tr>
+        <td id="c_00" class="other">30</td>
+        <td id="c_01" class="other">31</td>
+        <td id="c_02" class="current">1</td>
+        <td id="c_03" class="current">2</td>
+        <td id="c_04" class="current">3</td>
+        <td id="c_05" class="current sat">4</td>
+        <td id="c_06" class="current sun">5</td>
+      </tr>
+      <tr>
+        <td id="c_10" class="current">6</td>
+        <td id="c_11" class="current today">7</td>
+        <td id="c_12" class="current">8</td>
+        <td id="c_13" class="current dot" title="testing, testing, testing">9</td>
+        <td id="c_14" class="current">10</td>
+        <td id="c_15" class="current sat">11</td>
+        <td id="c_16" class="current sun">12</td>
+      </tr>
+      <tr>
+        <td id="c_20" class="current">13</td>
+        <td id="c_21" class="current">14</td>
+        <td id="c_22" class="current">15</td>
+        <td id="c_23" class="current">16</td>
+        <td id="c_24" class="current">17</td>
+        <td id="c_25" class="current sat">18</td>
+        <td id="c_26" class="current sun">19</td>
+      </tr>
+      <tr>
+        <td id="c_30" class="current">20</td>
+        <td id="c_31" class="current">21</td>
+        <td id="c_32" class="current">22</td>
+        <td id="c_33" class="current">23</td>
+        <td id="c_34" class="current">24</td>
+        <td id="c_35" class="current sat">25</td>
+        <td id="c_36" class="current sun">26</td>
+      </tr>
+      <tr>
+        <td id="c_40" class="current">27</td>
+        <td id="c_41" class="current">28</td>
+        <td id="c_42" class="current">29</td>
+        <td id="c_43" class="current">30</td>
+        <td id="c_44" class="other">1</td>
+        <td id="c_45" class="other sat">2</td>
+        <td id="c_46" class="other sun">3</td>
+      </tr>
+      <tr>
+        <td id="c_50" class="other">4</td>
+        <td id="c_51" class="other">5</td>
+        <td id="c_52" class="other">6</td>
+        <td id="c_53" class="other">7</td>
+        <td id="c_54" class="other">8</td>
+        <td id="c_55" class="other sat">9</td>
+        <td id="c_56" class="other sun">10</td>
+      </tr>
+    </table>
+    <table id="monthsList">
+      <tr>
+        <td id="m_00" class="current" month="1">January</td>
+        <td id="m_01" class="current" month="2">February</td>
+      </tr>
+      <tr>
+        <td id="m_10" class="current" month="3">March</td>
+        <td id="m_11" class="current" month="4">April</td>
+      </tr>
+      <tr>
+        <td id="m_20" class="current" month="5">May</td>
+        <td id="m_21" class="current today" month="6">June</td>
+      </tr>
+      <tr>
+        <td id="m_30" class="current" month="7">July</td>
+        <td id="m_31" class="current" month="8">August</td>
+      </tr>
+      <tr>
+        <td id="m_40" class="current" month="9">September</td>
+        <td id="m_41" class="current" month="10">October</td>
+      </tr>
+      <tr>
+        <td id="m_50" class="current" month="11">November</td>
+        <td id="m_51" class="current" month="12">December</td>
+      </tr>
+    </table>
+    <table id="yearsList">
+      <tr>
+        <td id="y_00" class="current">2009</td>
+        <td id="y_01" class="current">2010</td>
+        <td id="y_02" class="current">2011</td>
+      </tr>
+      <tr>
+        <td id="y_10" class="current">2012</td>
+        <td id="y_11" class="current">2013</td>
+        <td id="y_12" class="current">2014</td>
+      </tr>
+      <tr>
+        <td id="y_20" class="current">2015</td>
+        <td id="y_21" class="current today">2016</td>
+        <td id="y_22" class="current">2017</td>
+      </tr>
+      <tr>
+        <td id="y_30" class="current">2018</td>
+        <td id="y_31" class="current">2019</td>
+        <td id="y_32" class="current">2020</td>
+      </tr>
+      <tr>
+        <td id="y_40" class="current">2021</td>
+        <td id="y_41" class="current">2022</td>
+        <td id="y_42" class="current">2023</td>
+      </tr>
+    </table>
+  </div>
+  <script src="packages/chrome/bootstrap.js" defer></script>
+  <script src="main.dart.js"></script>
+</body>
+</html>
