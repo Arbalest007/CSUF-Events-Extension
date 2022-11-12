@@ -1,35 +1,59 @@
 const express = require('express')
-const { Builder, By } = require('selenium-webdriver');
+const {
+    Builder,
+    By
+} = require('selenium-webdriver');
 
 const app = express()
 const port = 3000
 app.get('/', async (request, response) => {
     // Web Scraping Code here
     try {
-      const data = await WebScrapingLocalTest();
-      response.status(200).json(data);
+        const data = await WebScrapingLocalTest();
+        response.status(200).json(data);
     } catch (error) {
-      response.status(500).json({
-        message: 'Server error occurred',
-      });
+        console.log(error);
+        response.status(500).json({
+            message: 'Server error occurred',
+        });
     }
-   });
-   app.listen(port, () => {
+});
+app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
-   });
-    
-   async function WebScrapingLocalTest() {
+});
+
+async function WebScrapingLocalTest() {
     try {
-      driver = await new Builder().forBrowser('chrome').build();
-      await driver.get('http://calendar.fullerton.edu/');
-      const csufEvents = await driver.findElements(By.xpath('//ul[@class="EventContainer_UL"]//div[@class="EventCard_Shell Events_CalendarListDetails "]'));
-      //return await getVideos(allVideos);
+        driver = await new Builder().forBrowser('chrome').build();
+        await driver.get('http://calendar.fullerton.edu/');
+        const csufEvents = await driver.findElements(By.xpath('//ul[@class="EventContainer_UL"]//div[@class="EventCard_Shell Events_CalendarListDetails "]'));
+        //return await getEvents(csufEvents);
+        return await csufEvents;
     } catch (error) {
-      throw new Error(error);
-    } finally {
-      await driver.quit();
+        throw new Error(error);
+    } 
+    // finally {
+    //     await driver.quit();
+    // }
+}
+
+async function getEvents(events) {
+    let eventDetails = [];
+    try {
+        for(const event of events) {
+            const title = await event.findElement(By.className('EventTitle')).getText();
+            eventDetails.push({
+                title: title ?? ''
+            });
+        }
     }
-   }
+    catch (error){
+        console.log(error);
+    }
+
+    console.log(eventDetails);
+    return eventDetails;
+}
 
 //    async function getVideos(videos) {
 //     let videoDetails = [];
