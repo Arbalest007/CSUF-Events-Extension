@@ -6,21 +6,21 @@ const {
 
 const app = express()
 const port = 3000
-app.get('/', async (request, response) => {
-    // Web Scraping Code here
-    try {
-        const data = await WebScrapingLocalTest();
-        response.status(200).json(data);
-    } catch (error) {
-        console.log(error);
-        response.status(500).json({
-            message: 'Server error occurred',
-        });
-    }
-});
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
-});
+// app.get('/', async (request, response) => {
+//     // Web Scraping Code here
+//     try {
+//         const data = await WebScrapingLocalTest();
+//         response.status(200).json(data);
+//     } catch (error) {
+//         console.log(error);
+//         response.status(500).json({
+//             message: 'Server error occurred',
+//         });
+//     }
+// });
+// app.listen(port, () => {
+//     console.log(`Example app listening at http://localhost:${port}`);
+// });
 
 async function WebScrapingLocalTest() {
     try {
@@ -28,7 +28,8 @@ async function WebScrapingLocalTest() {
         await driver.get('http://calendar.fullerton.edu/');
         const csufEvents = await driver.findElements(By.xpath('//ul[@class="EventContainer_UL"]//div[@class="EventCard_Shell Events_CalendarListDetails "]'));
         //return await getEvents(csufEvents);
-        return await csufEvents;
+        //return await csufEvents;
+        console.log(csufEvents);
     } catch (error) {
         throw new Error(error);
     } 
@@ -77,3 +78,5 @@ async function getEvents(events) {
 //     }
 //     return videoDetails;
 //    }
+
+WebScrapingLocalTest();
