@@ -2,7 +2,7 @@
 "manifest_version": 3,
 "name": "CSUF Event Calendar",
 "description": "Tool to view and/or get updates surrounding CSUF events",
-"permissions": ["storage"],
+"permissions": ["activeTab", "scripting", "storage"],
 "version": "0.08",
 "icons": {
     "16": "/images/tuffyimage16.png",

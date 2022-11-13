@@ -2,7 +2,7 @@
     text-align: center;
 }
 #updateEvents {
-    background-color: rgb(153, 151, 151);
+    background-color: rgb(112, 112, 112);
     padding: .4em;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -17,4 +17,4 @@
     border: none;
     background: orange;
     box-shadow: 0px 0px 1px rgb(185, 184, 184);
-   }
+   };
