@@ -15,6 +15,7 @@ updateEvents.addEventListener("click", async () => {
     await setTimeout(5000);
 })
 
+/*
 function secondFunction(){
     // call first function and pass in a callback function which
     // first function runs when it has completed
@@ -22,7 +23,4 @@ function secondFunction(){
         alert('All CSUF events are up to date!');
     });    
 }
-
-function scrapeEventsFromCalendar() {
-    alert('Failed to update calendar.');
-}
+*/
