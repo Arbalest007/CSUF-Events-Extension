@@ -135,3 +135,46 @@ const insertNewEvent = async (event) => {
 };
 
 insertNewEvent(event);
+
+const convertTime12to24 = (time12h) => {
+    const [time, modifier] = time12h.split(' ');
+  
+    let [hours, minutes] = time.split(':');
+  
+    if (hours === '12') {
+      hours = '00';
+    }
+  
+    if (modifier === 'pm') {
+      hours = parseInt(hours, 10) + 12;
+    }
+  
+    return `${hours}:${minutes}`;
+  }
+  
+  
+  const convertFullString = (s) => {
+      let time_array = [];
+      let l = 0;
+      for(let r = 1; r < s.length; r++) {
+          if ((s[r] == "m" && s[r-1] == "p") || (s[r] == "m" && s[r-1] == "a")) {
+              let time_string = s.slice(l, r+1);
+              time_array.push(time_string);
+              l = r;
+              // console.log(parseInt(s[l]));
+          }
+          while (isNaN(parseInt(s[l])) && l < s.length) {
+                  l+=1;
+              }
+      }
+      
+      let time1 = convertTime12to24(time_array[0]);
+      let time2 = convertTime12to24(time_array[1]);
+      
+      return `${time1} to ${time2}`;
+  }
+  let s = "1:25 pm";
+  let s1 = "12:45 am to 12:45 pm";
+  
+  console.log(convertTime12to24(s));
+  console.log(convertFullString(s1));
