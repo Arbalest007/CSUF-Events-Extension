@@ -15,6 +15,50 @@ const auth = new google.auth.JWT(
 
 const TIMEOFFSET = '-08:00';
 
+// const parseTime = (input) => {
+//     const date = new Date();
+//     const year = date.getFullYear();
+    
+//     inputArray = input.replaceAll(":", " ").split(" ");
+
+//     parsedTime = [];
+
+//     let hour, minute, endHour, endMinute = null;
+
+//     counter = 0;
+//     for(var i = 0; i < inputArray.length - 2; i++) {
+
+
+//         if(inputArray[i] == "Noon") {
+//             parsedTime[counter] = `12`;
+//             counter++;
+//             continue;
+//         } else if {
+//             hour = inputArray[i];
+//             if(hour < 10) {
+//                 hour = `0${hour}`;
+//             }
+//         }
+
+//         if(inputArray[i] == "am" && hour == `12`)  {
+//             hour = `00`;
+//         } else if(inputArray[i] == "pm") {
+//             tempNum = Number(hour);
+//             tempNum += 12;
+//             hour = `${tempNum}`;
+//         }
+
+//         if(inputArray[i] == "to") {
+//             continue;
+//         }
+//     }
+
+//     return {
+//         'start': startDate,
+//         'end': endDate
+//     }
+// }
+
 const dateTimeForCalendar = () => {
     const date = new Date();
     const year = date.getFullYear();
@@ -70,7 +114,7 @@ const insertEvent = async (event) => {
 let dateTime = dateTimeForCalendar();
 let event = {
     'summary': `This is the summary`,
-    'description': `This is the description`,
+    'description': `This is the description. Lets see how long the `,
     'start': {
         'dateTime': dateTime['start'],
         'timeZone': 'Asia/Kolkata'
