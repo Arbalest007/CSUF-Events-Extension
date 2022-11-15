@@ -9,7 +9,7 @@ const SCOPES = 'https://www.googleapis.com/auth/calendar';
 const calendar = google.calendar({
     version: "v3"
 });
-
+const months = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
 const auth = new google.auth.JWT(
     CREDENTIALS.client_email,
     null,
@@ -133,20 +133,6 @@ const insertEvent = async (event) => {
     }
 };
 
-let dateTime = dateTimeForCalendar();
-let event = {
-    'summary': `This is the summary`,
-    'description': `This is the description.`,
-    'start': {
-        'dateTime': dateTime['start'],
-        'timeZone': 'Asia/Kolkata'
-    },
-    'end': {
-        'dateTime': dateTime['end'],
-        'timeZone': 'Asia/Kolkata'
-    }
-};
-
 const insertNewEvent = async (event) => {
     try {
         const res = await insertEvent(event);
@@ -157,9 +143,9 @@ const insertNewEvent = async (event) => {
 };
 
 async function getEvents() {
-    const eventList = await fetch('https://gist.githubusercontent.com/anthonyn5600/42f598c9b99ba68207cce175605b5578/raw/d38c88bac82c4b5d7b0ae7e0ec7d2bea8d622562/event.json')
+    const eventList = await fetch('https://raw.githubusercontent.com/Arbalest007/CSUF-Events-Extension/main/event.json')
         .then(eventList => eventList.json())
-        .then(data => initializeCalendar(data));
+        .then(data => initializeCalendar(data.events));
 }
 
 function removeLastCharacter(filename) {
@@ -178,18 +164,60 @@ function removeLastCharacter(filename) {
     })
 }
 
-function initializeCalendar(data) {
-    for(i = 0; i < 1; i++) {
-        console.log(data[i].location);
+async function initializeCalendar(data) {
+    const timer = ms => new Promise(res => setTimeout(res, ms))
+
+    let event = {
+    'summary': `This is the summary`,
+    'description': `This is the description.`,
+    'start': {
+        'dateTime': 'Empty',
+        'timeZone': 'America/Los_Angeles'
+    },
+    'end': {
+        'dateTime': 'Empty',
+        'timeZone': 'America/Los_Angeles'
+    }};
+
+    for(i = 0; i < data.length; i++) {
+        //var row = JSON.parse(data[i]);
+        event['summary'] = data[i].event_title;
+        event['description'] = (data[i].link).replaceAll("Share URL:\n", "");
+
+        timeString = data[i].event_time;
+        cleanString = convertNoon(timeString);
+        
+        finalTime = parseTime(timeString);
+        month = 1 + months.indexOf(data[i].event_month);
+        year = 0;
+
+        if(month < 11) {
+            year = 2023;
+        } else {
+            year = 2022;
+        }
+
+        day = data[i].event_day;
+        startTime = finalTime[0];
+        endTime = finalTime[2];
+
+        startTimeFinal = `${year}-${month}-${day}T${startTime}:00.000${TIMEOFFSET}`;
+        endTimeFinal = `${year}-${month}-${day}T${endTime}:00.000${TIMEOFFSET}`;
+
+        event['start'].dateTime = startTimeFinal;
+        event['end'].dateTime = endTimeFinal;
+
+        insertNewEvent(event);
+        await timer(3000);
     }
 }
 
 //removeLastCharacter('event.json')
 getEvents();
 
-let s = "1:25 pm";
-let s1 = "12:45 am to 12:45 pm";
-console.log(convertTime12to24(s));
-console.log(convertFullString(s1));
-console.log(convertNoon("Noon to Noon"));
-console.log(parseTime("12 am to 12 am"));
+// let s = "1:25 pm";
+// let s1 = "12:45 am to 12:45 pm";
+// console.log(convertTime12to24(s));
+// console.log(convertFullString(s1));
+// console.log(convertNoon("Noon to Noon"));
+// console.log(parseTime("12 am to 12 am"));
