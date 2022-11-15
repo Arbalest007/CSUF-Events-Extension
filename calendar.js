@@ -178,14 +178,14 @@ function removeLastCharacter(filename) {
     })
 }
 
-// function initializeCalendar(data) {
-//     for(i = 0; i < 1; i++) {
-//         console.log(${data[i].location});
-//     }
-// }
+function initializeCalendar(data) {
+    for(i = 0; i < 1; i++) {
+        console.log(data[i].location);
+    }
+}
 
-removeLastCharacter('event.json')
-//getEvents();
+//removeLastCharacter('event.json')
+getEvents();
 
 let s = "1:25 pm";
 let s1 = "12:45 am to 12:45 pm";
