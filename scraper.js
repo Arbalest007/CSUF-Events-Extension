@@ -1,11 +1,14 @@
 const { Builder, By } = require('selenium-webdriver');
 const fs = require('fs')
+
 async function start() {
     let driver = await new Builder().forBrowser('chrome').build()
     await driver.get('http://calendar.fullerton.edu/');
     await driver.manage().setTimeouts({ implicit: 4000 });
 
     let eventlist = driver.findElements(By.xpath('//ul[@class="EventContainer_UL"]//div[@class="EventCard_Shell Events_CalendarListDetails "]'))
+
+    counter = 0
 
     for (let event of await eventlist) {
         let detail = await event.findElement(By.css('a')).click()
@@ -21,7 +24,18 @@ async function start() {
                 link: await page.findElement(By.xpath('//*[@id="EventFullFrame"]/div/div[2]/div[2]/div[2]/div/p[2]')).getText()
             }
             let info_to_file = JSON.stringify(info);
-            fs.appendFile('event.json', info_to_file + '\n', err => {
+
+            if(counter == 0) {
+                fs.appendFile('event.json', "{ \"events\": [\n",err => {
+                    if (err) {
+                        console.error(err)
+                        return
+                    }
+                })
+                counter++;
+            }
+            
+            fs.appendFile('event.json', info_to_file + ',\n', err => {
                 if (err) {
                     console.error(err)
                     return
