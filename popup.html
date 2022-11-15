@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <link rel = "stylesheet" href = "style.css" />
     <title>Chrome Extension</title>
@@ -39,12 +41,12 @@
         btn();
         
         function btn() {
-          if (localStorage.clickcount) {
-            localStorage.clickcount = Number(localStorage.clickcount)+1;
+          if (localStorage.clickState) {
+            localStorage.clickState = Number(localStorage.clickcount)+1;
           } else {
             localStorage.clickcount = 1;
           }
-          document.getElementById("demo").innerHTML = localStorage.clickcount;
+          document.getElementById("btn").innerHTML = localStorage.clickState;
         }
         </script>
 
@@ -66,8 +68,5 @@
   <div id="foobar" style="background: none"></div>
       
       </body>
-
-    
-
     
 </html>
