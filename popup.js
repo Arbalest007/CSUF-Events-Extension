@@ -12,9 +12,9 @@ updateEvents.addEventListener("click", async () => {
         target: {tabId: tab.id},
         func: scrapeEventsFromCalendar,
     });
-    await setTimeout(5000);
 })
 
+//Test function
 /*
 function secondFunction(){
     // call first function and pass in a callback function which

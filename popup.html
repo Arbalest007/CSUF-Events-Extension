@@ -8,11 +8,12 @@
     </script>
     <body style="background-color:rgb(14, 58, 116);">
      </body>
+
 </head>
 <body background="/images/tuffytemp.png">
         </script>
     <div class = "center">
-        <img src="/images/tuffyimage48-2.png" alt="Dinosaur" />
+        <img src="/images/tuffyimage48-2.png"/>
     <h1><p style="color:#FFFFFF">Welcome Titan!</p></h1>
     <button id = "updateEvents">Update Calendar</button>
     <ul id = "notifications"></ul>
@@ -24,33 +25,45 @@
 </h1>
 
 <head>
+    <link rel = "stylesheet" href = "style.css" />
     <meta charset="UTF-8" />
   </head>
 
   <body>
     <div class="btn-group" style="width:100%"></div>
-    <button id="btn">Dark Theme</button>
+    <div class = "center">
+    <button id="btn">Change Theme</button>
     <script src="darktheme.js">
     </script>
-    <button id="btn">Light Theme</button>
-    <script src="lighttheme.js">
-    </script>
-  </body>
-    </body>
+    <script>
+        btn();
+        
+        function btn() {
+          if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+          } else {
+            localStorage.clickcount = 1;
+          }
+          document.getElementById("demo").innerHTML = localStorage.clickcount;
+        }
+        </script>
 
-
+</body>
+<body>
+    <button id = "aboutInfo">About</button>
+    <ul id = "notifytoscreen"></ul>
+    <script src = "aboutscreen.js"></script>
+</div>
     
-      </style>
+  </body>
+
+
       <body>
-          
+
+
   <script src="darktheme.js">
   </script>
   <div id="foobar" style="background: none"></div>
-  
-  <script src="lighttheme.js">
-  </script>
-  <div id="foobar" style="background: none"></div>
-      </div>
       
       </body>
 
