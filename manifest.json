@@ -3,7 +3,7 @@
 "name": "CSUF Event Calendar",
 "description": "Tool to view and/or get updates surrounding CSUF events",
 "permissions": ["activeTab", "scripting", "storage"],
-"version": "0.50",
+"version": "0.75",
 "icons": {
     "16": "/images/tuffyimage16.png",
     "48": "/images/tuffyimage48.png",

@@ -164,8 +164,9 @@ function removeLastCharacter(filename) {
     })
 }
 
-function initializeCalendar(data) {
-    let dateTime = dateTimeForCalendar();
+async function initializeCalendar(data) {
+    const timer = ms => new Promise(res => setTimeout(res, ms))
+
     let event = {
     'summary': `This is the summary`,
     'description': `This is the description.`,
@@ -206,7 +207,8 @@ function initializeCalendar(data) {
         event['start'].dateTime = startTimeFinal;
         event['end'].dateTime = endTimeFinal;
 
-        console.log(event);
+        insertNewEvent(event);
+        await timer(3000);
     }
 }
 
