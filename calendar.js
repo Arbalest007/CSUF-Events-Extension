@@ -81,39 +81,6 @@ const parseTime = (s) => {
     return inputArray;
 }
 
-const dateTimeForCalendar = () => {
-    const date = new Date();
-    const year = date.getFullYear();
-
-    let month = date.getMonth() + 1;
-    if (month < 10) {
-        month = `0${month}`;
-    }
-    let day = date.getDate();
-    if (day < 10) {
-        day = `0${day}`;
-    }
-    let hour = date.getHours();
-    if (hour < 10) {
-        hour = `0${hour}`;
-    }
-    let minute = date.getMinutes();
-    if (minute < 10) {
-        minute = `0${minute}`;
-    }
-
-    const newDateTime = `${year}-${month}-${day}T${hour}:${minute}:00.000${TIMEOFFSET}`;
-    const event = new Date(Date.parse(newDateTime));
-
-    const startDate = event;
-    const endDate = new Date(new Date(startDate).setHours(startDate.getHours() + 1));
-
-    return {
-        'start': startDate,
-        'end': endDate
-    }
-};
-
 const insertEvent = async (event) => {
     try {
         const response = await calendar.events.insert({
@@ -180,7 +147,6 @@ async function initializeCalendar(data) {
     }};
 
     for(i = 0; i < data.length; i++) {
-        //var row = JSON.parse(data[i]);
         event['summary'] = data[i].event_title;
         event['description'] = (data[i].link).replaceAll("Share URL:\n", "");
 
@@ -212,12 +178,4 @@ async function initializeCalendar(data) {
     }
 }
 
-//removeLastCharacter('event.json')
 getEvents();
-
-// let s = "1:25 pm";
-// let s1 = "12:45 am to 12:45 pm";
-// console.log(convertTime12to24(s));
-// console.log(convertFullString(s1));
-// console.log(convertNoon("Noon to Noon"));
-// console.log(parseTime("12 am to 12 am"));
