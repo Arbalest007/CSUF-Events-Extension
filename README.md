@@ -16,4 +16,6 @@ CSUF Events is a browser extension built for Google Chrome. The extension depend
 # Installation Instructions
 
 1. Navigate to [_chrome://extensions/_](chrome://extensions/) in your Google Chrome search bar.
-   ![Game1](https://user-images.githubusercontent.com/39601543/162555378-559a8df8-fec9-4eea-b641-0cad3bc822e6.png)
+2. Toggle Developer Mode.
+
+   ![Extensions Management Page](https://user-images.githubusercontent.com/39601543/162555378-559a8df8-fec9-4eea-b641-0cad3bc822e6.png)
