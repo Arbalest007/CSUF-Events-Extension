@@ -14,6 +14,6 @@ CSUF Events is a browser extension built for Google Chrome. The extension depend
 * Selenium Webdriver
 
 # Installation Instructions
-- **To run this project, you must enable Developer Mode in your Google Chrome Browser**
-1. Instruction 1
+
+1. Navigate to [_chrome://extensions/_](chrome://extensions/) in your Google Chrome search bar.
    ![Game1](https://user-images.githubusercontent.com/39601543/162555378-559a8df8-fec9-4eea-b641-0cad3bc822e6.png)
