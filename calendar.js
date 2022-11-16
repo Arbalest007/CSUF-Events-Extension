@@ -20,8 +20,10 @@ require("dotenv").config();
 const fs = require("fs");
 
 const CREDENTIALS = JSON.parse(process.env.CREDENTIALS);
-const calendarId = process.env.calendarId;
 const SCOPES = "https://www.googleapis.com/auth/calendar";
+const TIMEOFFSET = "-08:00";
+
+const calendarId = process.env.calendarId;
 const calendar = google.calendar({
   version: "v3",
 });
@@ -45,8 +47,6 @@ const auth = new google.auth.JWT(
   CREDENTIALS.private_key,
   SCOPES
 );
-
-const TIMEOFFSET = "-08:00";
 
 const convertNoon = (input) => {
   inputArray = input.split(" ");
@@ -147,6 +147,7 @@ async function getEvents() {
     .then((data) => initializeCalendar(data.events));
 }
 
+//Only call if event.json has not been initialized yet!
 function removeLastCharacter(filename) {
   const stat = fs.statSync(filename);
   const fileSize = stat.size;
