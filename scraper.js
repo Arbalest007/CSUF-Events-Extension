@@ -1,12 +1,13 @@
 /*----------------------------scraper.js----------------------------------------------------------
 |  Author: Patrick Lin, Nicholas Jones, Sami Bajwa                                                    |
-|  Group Name: Some group name                                                                        |
+|  Group Name: Some Group Name                                                                        |
 |  Emails: pjlin@csu.fullerton.edu, nicholasj898@csu.fullerton.edu, samibajwa@csu.fullerton.edu       |
 |  Class: CPSC 254                                                                                    |
 |  Instructor: Professor Chen                                                                         |
-|  Purpose: This program is a google chrome extension that displays all of the future events          |
-|  that will take place at the school California State University, Fullerton.                         |
-|  Dependencies: Google API, Selenium API                                                             |
+|  Purpose: This script utilizes Selenium to scrape all of the available calendar events off of the   |
+|  official CSUF calendar. It does this by searching for the Xpath of specified elements and          |
+|  returning their values, which are then packaged into JSON objects.                                 |
+|  Dependencies: Google Calendar API, Selenium API                                                    |
 |  Known Bugs: N/A                                                                                    |
 |  Licensing Information: You are free to use or extend this project for educational purposes         |
 |  provided that you (1) retain this notice, and (2) provide clear attribution to the developers of   |
