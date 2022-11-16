@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <link rel = "stylesheet" href = "style.css" />
     <title>Chrome Extension</title>
@@ -10,6 +9,13 @@
     </script>
     <body style="background-color:rgb(14, 58, 116);">
      </body>
+
+     <script>
+        let prev = localStorage.getItem('clickState') || 'default';
+        document.documentElement.setAttribute('data-theme', prev);
+        checkbox.checked = prev === 'selected';
+    </script>
+
 
 </head>
 <body background="/images/tuffytemp.png">
