@@ -3,7 +3,7 @@
 ###### Current Version: 1.00
 
 # About
-**CSUF Events** is a browser extension built for Google Chrome. The extension depends on data scraped rom the official [CSUF calendar](http://calendar.fullerton.edu/) utilizing the Selenium webdriver. This data is then parsed and packaged into an appropriate JSON format which we insert into a Google Calendar by calling the Google Calendar API. Finally, the calendar is embedded into the extension's UI in a compact layout to provide user's with an overview of upcoming campus events.
+**CSUF Events** is a browser extension built for Google Chrome. The extension depends on data scraped from the official [CSUF calendar](http://calendar.fullerton.edu/) utilizing the Selenium webdriver. This data is then parsed and packaged into an appropriate JSON format which we insert into a Google Calendar by calling the Google Calendar API. Finally, the calendar is embedded into the extension's UI in a compact layout to provide user's with an overview of upcoming campus events.
 
 # Technologies and Languages
 * Javascript
