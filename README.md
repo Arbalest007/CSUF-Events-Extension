@@ -21,7 +21,7 @@
 
    ![Steps 2 & 3](https://github.com/Arbalest007/CSUF-Events-Extension/blob/4121b798e427ad0be989ddc424e1c9a0ffb3896b/images/Instruction%201.png)
 
-4. Select **Load Unpacked**, navigate to the parent directory containing the repository's folder, then **confirm**.
+4. Select **Load Unpacked**, navigate to the parent directory containing the repository's folder, select it, then **confirm**.
 
    ![Step 4](https://github.com/Arbalest007/CSUF-Events-Extension/blob/4121b798e427ad0be989ddc424e1c9a0ffb3896b/images/Instruction%202.png)
 
