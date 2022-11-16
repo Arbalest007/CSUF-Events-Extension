@@ -15,22 +15,22 @@
 ------------------------------------------------------------------------------------------------------*/
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 #updateEvents {
-    background-color: rgb(112, 112, 112);
-    padding: .4em;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    color: rgb(224, 224, 224);
-    font-family: 'Arial';
-    font-size: 14px;
-    text-decoration: none;
-    border: none;
-   }
-   #updateEvents:hover {
-    border: none;
-    background: orange;
-    box-shadow: 0px 0px 1px rgb(185, 184, 184);
-   };
+  background-color: rgb(112, 112, 112);
+  padding: 0.4em;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: rgb(224, 224, 224);
+  font-family: "Arial";
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+}
+#updateEvents:hover {
+  border: none;
+  background: orange;
+  box-shadow: 0px 0px 1px rgb(185, 184, 184);
+}

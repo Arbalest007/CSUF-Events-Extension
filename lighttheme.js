@@ -14,16 +14,14 @@
 |  https://github.com/Arbalest007/CSUF-Events-Extension                                               |
 ------------------------------------------------------------------------------------------------------*/
 
-const btn = document.getElementById('btn');
+const btn = document.getElementById("btn");
 
-btn.addEventListener('click', function onClick(event) {
-  
-  var foobarElement = document.getElementById('foobar');
-  foobarElement.style.backgroundImage = '';
-  foobarElement.style.background = '';
-  foobarElement.style.backgroundUrl = '';
-  foobarElement.style.backgroundColor = '';
+btn.addEventListener("click", function onClick(event) {
+  var foobarElement = document.getElementById("foobar");
+  foobarElement.style.backgroundImage = "";
+  foobarElement.style.background = "";
+  foobarElement.style.backgroundUrl = "";
+  foobarElement.style.backgroundColor = "";
 
-  document.body.style.backgroundColor = 'black';
-
+  document.body.style.backgroundColor = "black";
 });
