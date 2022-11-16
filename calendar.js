@@ -89,7 +89,6 @@ const convertFullString = (s) => {
       let time_string = s.slice(l, r + 1);
       time_array.push(time_string);
       l = r;
-      // console.log(parseInt(s[l]));
     }
     while (isNaN(parseInt(s[l])) && l < s.length) {
       l += 1;
