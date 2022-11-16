@@ -1,12 +1,12 @@
 <!-- ----------------------------popup.html----------------------------------------------------------
 |  Author: Patrick Lin, Nicholas Jones, Sami Bajwa                                                    |
-|  Group Name: Some group name                                                                        |
+|  Group Name: Some Group Name                                                                        |
 |  Emails: pjlin@csu.fullerton.edu, nicholasj898@csu.fullerton.edu, samibajwa@csu.fullerton.edu       |
 |  Class: CPSC 254                                                                                    |
 |  Instructor: Professor Chen                                                                         |
-|  Purpose: This program is a google chrome extension that displays all of the future events          |
-|  that will take place at the school California State University, Fullerton.                         |
-|  Dependencies: Google API, Selenium API                                                             |
+|  Purpose: Popup.html is what Google Chrome calls when it displays our calendar extension. This file |
+|  defines all of the Frontend elements and buttons that the user will see.                           |
+|  Dependencies: Google Calendar API, Selenium API                                                    |
 |  Known Bugs: N/A                                                                                    |
 |  Licensing Information: You are free to use or extend this project for educational purposes         |
 |  provided that you (1) retain this notice, and (2) provide clear attribution to the developers of   |
@@ -20,9 +20,6 @@
 <head>
     <link rel = "stylesheet" href = "style.css" />
     <title>Chrome Extension</title>
-    <script>
-        src="event-scraper.js"
-    </script>
     <body style="background-color:rgb(14, 58, 116);">
      </body>
 
@@ -51,7 +48,7 @@
 <head>
     <link rel = "stylesheet" href = "style.css" />
     <meta charset="UTF-8" />
-  </head>
+</head>
 
   <body>
     <div class="btn-group" style="width:100%"></div>
@@ -71,24 +68,19 @@
           document.getElementById("btn").innerHTML = localStorage.clickState;
         }
         </script>
+  </body>
 
-</body>
 <body>
     <button id = "aboutInfo">About</button>
     <ul id = "notifytoscreen"></ul>
     <script src = "aboutscreen.js"></script>
 </div>
-    
-  </body>
-
-
-      <body>
+</body>
 
 
   <script src="themes.js">
   </script>
   <div id="foobar" style="background: none"></div>
-      
-      </body>
+</body>
     
 </html>
